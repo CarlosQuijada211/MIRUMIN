@@ -5,6 +5,49 @@
 {% endblock %}
 
 {% block main %}
-    <h1>STORE</h1>
-    <a href="/logout">Log Out</a>
+<body class="homepage_body">
+    <h1 class="text_center">STORE</h1>
+    
+    <h2>Popular</h2>
+    <div class="item_set">
+        {% for i in range(10) %}
+            <div class="item_background">
+                <h2 class="item_title">Hollow Knight</h2>
+                <img class="item_image" src="/static/img/HollowKnight.png">
+                <h2 class="item_price">$5.00</h2>
+                <div class="item_category">
+                    <h3 class="text_center">Sticker</h3>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <h2>Nuevo</h2>
+    <div class="item_set">
+        {% for i in range(10) %}
+            <div class="item_background">
+                <h2 class="item_title">Hollow Knight</h2>
+                <img class="item_image" src="/static/img/HollowKnight.png">
+                <h2 class="item_price">$5.00</h2>
+                <div class="item_category">
+                    <h3 class="text_center">Sticker</h3>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <h2>Recomendado</h2>
+    <div class="item_set">
+        {% for i in range(10) %}
+            <div class="item_background">
+                <h2 class="item_title">Hollow Knight</h2>
+                <img class="item_image" src="/static/img/HollowKnight.png">
+                <h2 class="item_price">$5.00</h2>
+                <div class="item_category">
+                    <h3 class="text_center">Sticker</h3>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <p class="text_center"><a href="/logout">Log Out</a></p>
+</body>
 {% endblock %}
