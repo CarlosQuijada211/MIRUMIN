@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.3/ -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+        <link href="/static/styles.css" rel="stylesheet">
+        {% block head %}{% endblock %}
+        <link href="/static/colors.css" rel="stylesheet">
+
+        <title>MIRUMIN: {% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <!-- Show any flash alert App.py may have passed. -->
+        {% if get_flashed_messages() %}
+        <header>
+            <div id="alert" class="alert alert-primary mb-0 text-center" role="alert">
+                {{ get_flashed_messages() | join(" ") }}
+                <button id= "close-flash" type="button" class="btn-close" aria-label="Close" style="float: right"></button>
+                <!-- Need Javascript for button to close pop up -->
+            </div>
+        </header>
+        {% endif %}
+
+        <!-- Main Content -->
+        <main class="container py-5 text-center">
+            <div id="main-body">
+                {% block main %}{% endblock %}
+            <div id="main-body">
+        </main>
+    </body>
+</html>
