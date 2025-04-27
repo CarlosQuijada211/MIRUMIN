@@ -9,6 +9,8 @@
 
         <link href="/static/styles.css" rel="stylesheet">
         <link href="/static/colors.css" rel="stylesheet">
+
+        <script type="text/javascript" src="/static/js/layout.js" defer></script>
         
         {% block head %}{% endblock %}
         <title>MIRUMIN: {% block title %}{% endblock %}</title>
@@ -32,8 +34,54 @@
 
         <aside id="sidebar">
             <ul>
-                <li class="active">
-                    <a href="/login">Log in</a>
+                <li>
+                    <a href="/">
+                        <span>Página principal</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/">
+                        <span>Búsqueda</span>
+                    </a>
+                </li>
+
+                <!-- Dropdown menu for categories -->
+                <li>
+                    <button class="dropdown-btn" onclick="toggleSubMenu(this)">
+                        <span>Categorías  ></span>
+                    </button>
+                    <ul class="sub-menu">
+                        <div>
+                           <li><a href="#">Stickers</a></li>
+                            <li><a href="#">Llaveros</a></li> 
+                        </div>
+                        
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/">
+                        <span>Comisiones</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/">
+                        <span>Quienes somos</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/">
+                        <span>Contactanos</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/logout">
+                        <span>Log out</span>
+                    </a>
                 </li>
             </ul>
         </aside>
@@ -43,6 +91,5 @@
             {% block main %} {% endblock %}
         </main>
 
-        <script type="text/javascript" src="/static/js/layout.js"></script>
     </body>
 </html>
