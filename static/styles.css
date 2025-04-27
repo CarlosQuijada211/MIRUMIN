@@ -2,8 +2,8 @@
 /* Homepage body */
 .homepage_body {
     background-color: white;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 1%;
+    padding-right: 1%;
     overflow-x: hidden;
 }
 
@@ -61,3 +61,48 @@
 .text_center {
     text-align: center;
 }
+
+                    /* Navigation Bars */
+body {
+    min-height: 100vh;
+    display: grid;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: auto 1fr; 
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "navbar navbar"
+    "sidebar main";
+}
+
+#horizontal_menu{
+    top: 0;
+    position: sticky;
+    grid-area: navbar;
+    grid-column: navbar;
+    padding: 1rem;
+    background-color: lightblue;
+    max-height: 52px;
+}
+
+#sidebar{
+    height: calc(100vh - 70.1px); /* 100% of the viewport height minus the height of the navbar */
+    width: auto;
+    top: 52px;
+    position: sticky;
+    align-self: start;
+    grid-area: sidebar;
+    background-color: grey;
+    display: none;
+}
+
+#sidebar.show {
+    display: block;
+}
+
+
+main{
+    grid-area: main;
+    overflow: hidden;
+}
+
