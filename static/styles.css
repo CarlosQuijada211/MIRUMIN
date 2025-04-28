@@ -56,6 +56,11 @@
 
 /* General */
 
+main{
+    grid-area: main;
+    overflow: hidden;
+}
+
 .text_center {
     text-align: center;
 }
@@ -67,4 +72,110 @@
 
 h3 {
     font-size: 17px;
+}
+
+/* Navigation Menus */
+body {
+    min-height: 100vh;
+    display: grid;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: auto 1fr; 
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "navbar navbar"
+    "sidebar main";
+}
+
+/* Horizontal Menu */
+#horizontal_menu{
+    top: 0;
+    position: sticky;
+    grid-area: navbar;
+    grid-column: navbar;
+    padding: 1rem;
+    background-color: lightblue;
+    max-height: 52px;
+    display: flex;
+    width: 100%;
+}
+
+.togleSidebar-btn{
+    flex: 1;
+}
+
+.horizontal_menu_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.horizontal_menu_search{
+    display: flex;
+    justify-content: right;
+    flex: 1;
+}
+
+/* Sidebar Menu */
+#sidebar{
+    height: calc(100vh - 52px); /* 100% of the viewport height minus the height of the navbar */
+    width: auto;
+    top: 52px;
+    position: fixed;
+    transform: translateX(-100%);
+    align-self: start;
+    grid-area: sidebar;
+    background-color: grey;
+    visibility: hidden;
+    display: block;
+    transition: transform 0.25s ease-in-out;
+}
+
+#sidebar.show {
+    transform: translateX(0);
+    visibility: visible;
+    position: sticky;
+    transition: transform 0.25s ease-in-out;
+}
+
+#sidebar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar a, #sidebar .dropdown-btn{
+    border-radius: .5em;
+    padding: .85em;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-btn{
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#sidebar a:hover, #sidebar .dropdown-btn:hover{
+    background-color: rgb(168, 168, 248);
+}
+
+#sidebar .sub-menu{
+    display: grid;
+    padding-left: 1rem;
+    grid-template-rows: 0fr;
+    transition: 300ms ease-in-out;
+
+    div{
+        overflow: hidden;
+    }
+}
+#sidebar .sub-menu.show{
+    grid-template-rows: 1fr;
 }

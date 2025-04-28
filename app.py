@@ -13,7 +13,7 @@ def get_db():
     return conn
 
 @app.route("/", methods=["GET", "POST"])
-@login_required
+#@login_required
 def store():
 
     db = get_db()
@@ -104,3 +104,6 @@ def logout():
     session.clear()
 
     return redirect("/")
+
+if __name__ == '__main__':
+    app.run(debug=True)
