@@ -8,15 +8,21 @@ app = Flask(__name__)
 app.secret_key = "b7a91c6b8c324de9b1820b58f2e9f4e"
 
 def get_db():
-    conn = sqlite3.connect("users.db", check_same_thread=False)
+    conn = sqlite3.connect("mirumin.db", check_same_thread=False)
     conn.row_factory = sqlite3.Row
     return conn
-
 
 @app.route("/", methods=["GET", "POST"])
 #@login_required
 def store():
-    return render_template("index.html")
+
+    db = get_db()
+
+    item1 = db.execute("SELECT * FROM items;")
+    item2 = db.execute("SELECT * FROM items;")
+    item3 = db.execute("SELECT * FROM items;")
+
+    return render_template("index.html", items1=item1, items2=item2, items3=item3)
 
 
 @app.route("/login", methods=["GET", "POST"])
