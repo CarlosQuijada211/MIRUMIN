@@ -10,41 +10,43 @@
     
     <h2>Popular</h2>
     <div class="item_set">
-        {% for i in range(10) %}
-            <div class="item_background">
-                <h2 class="item_title">Hollow Knight</h2>
-                <img class="item_image" src="/static/img/HollowKnight.png">
-                <h2 class="item_price">$5.00</h2>
-                <div class="item_category">
-                    <h3 class="text_center">Sticker</h3>
-                </div>
+        {% for item in items1 %}
+        <div class="item_background center">
+            <h3 class="item_title">{{item.titulo}}</h3>
+            <img class="item_image" src="/static/img/{{item.nombre_img}}">
+            <h2 class="item_price">${{item.precio}}</h2>
+            <div class="item_category">
+                <h3 class="text_center">{{item.categoria}}</h3>
             </div>
+        </div>
         {% endfor %}
     </div>
+
     <h2>Nuevo</h2>
     <div class="item_set">
-        {% for i in range(10) %}
-            <div class="item_background">
-                <h2 class="item_title">Hollow Knight</h2>
-                <img class="item_image" src="/static/img/HollowKnight.png">
-                <h2 class="item_price">$5.00</h2>
-                <div class="item_category">
-                    <h3 class="text_center">Sticker</h3>
-                </div>
+        {% for item in items2 %}
+        <div class="item_background center">
+            <h3 class="item_title">{{item.titulo}}</h3>
+            <img class="item_image" src="/static/img/{{item.nombre_img}}">
+            <h2 class="item_price">${{item.precio}}</h2>
+            <div class="item_category">
+                <h3 class="text_center">{{item.categoria}}</h3>
             </div>
+        </div>
         {% endfor %}
     </div>
+
     <h2>Recomendado</h2>
     <div class="item_set">
-        {% for i in range(10) %}
-            <div class="item_background">
-                <h2 class="item_title">Hollow Knight</h2>
-                <img class="item_image" src="/static/img/HollowKnight.png">
-                <h2 class="item_price">$5.00</h2>
-                <div class="item_category">
-                    <h3 class="text_center">Sticker</h3>
-                </div>
+        {% for item in items3 %}
+        <div class="item_background center">
+            <h3 class="item_title">{{item.titulo}}</h3>
+            <img class="item_image" src="/static/img/{{item.nombre_img}}">
+            <h2 class="item_price">${{item.precio}}</h2>
+            <div class="item_category">
+                <h3 class="text_center">{{item.categoria}}</h3>
             </div>
+        </div>
         {% endfor %}
     </div>
 
