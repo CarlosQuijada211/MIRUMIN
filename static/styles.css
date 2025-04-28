@@ -84,6 +84,25 @@ body {
     padding: 1rem;
     background-color: lightblue;
     max-height: 52px;
+    display: flex;
+    width: 100%;
+}
+
+.togleSidebar-btn{
+    flex: 1;
+}
+
+.horizontal_menu_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.horizontal_menu_search{
+    display: flex;
+    justify-content: right;
+    flex: 1;
 }
 
 /* Sidebar Menu */
