@@ -5,7 +5,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required
 
 app = Flask(__name__)
-app.secret_key = "b7a91c6b8c324de9b1820b58f2e9f4e"
 
 def get_db():
     conn = sqlite3.connect("mirumin.db", check_same_thread=False)
