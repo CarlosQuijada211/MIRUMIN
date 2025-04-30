@@ -59,6 +59,7 @@
 main{
     grid-area: main;
     overflow: hidden;
+    background-color: #f6f3ed;
 }
 
 .text_center {
@@ -252,4 +253,17 @@ body {
         width: 6rem;
         height: auto;
     }
+}
+
+/* Comisiones.html Body  */
+.comisiones_body{
+    margin: 5vh 15vh 0vh 4vh; /* top, right, bottom, left */
+
+    h1{
+        font-weight: 700;
+    }
+    
+    p{
+        font-size: 1.5rem;
+    };
 }

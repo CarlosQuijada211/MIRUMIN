@@ -104,5 +104,9 @@ def logout():
 
     return redirect("/")
 
+@app.route("/comisiones", methods=["GET", "POST"])
+def comisiones():
+    return render_template("comisiones.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
