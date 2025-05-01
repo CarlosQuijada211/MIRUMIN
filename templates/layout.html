@@ -30,65 +30,105 @@
 
         <nav id="horizontal_menu">
             <div  class="togleSidebar-btn">
-                <button onclick="toggleSidebar()">Toggle Sidebar</button>
+                <button onclick="toggleSidebar()">
+                    <img src="\static\img\layout\sidebar_logo.png">
+                </button>
             </div>
+
             <div class="horizontal_menu_logo">
-                <span>LOGO</span>
+                <img src="\static\img\layout\logo.png">
             </div>
-            <div class="horizontal_menu_search">search</div>
+
+            <div class="horizontal_menu_right_links">
+                <div class="horizontal_menu_search">
+                    <a href="/search">
+                        <img src="\static\img\layout\search_logo.png">
+                    </a>
+                </div>
+    
+                <div class="horizontal_menu_shipping_car">
+                    <a href="/shopping_cart">
+                        <img src="\static\img\layout\shopping_cart.png">
+                    </a>
+                </div>
+            </div>
+            
         </nav>
 
         <aside id="sidebar">
             <ul>
                 <li>
-                    <a href="/">
+                    <a href="/" class="sidebar-star-icon-and-txt">
+                        <img src="static\img\layout\star_icon_sidebar.png">
                         <span>Página principal</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/">
-                        <span>Búsqueda</span>
                     </a>
                 </li>
 
                 <!-- Dropdown menu for categories -->
                 <li>
                     <button class="dropdown-btn" onclick="toggleSubMenu(this)">
-                        <span>Categorías  ></span>
+                        <img src="static\img\layout\star_icon_sidebar.png">
+                        <span>Categorías</span>
                     </button>
+
                     <ul class="sub-menu">
                         <div>
-                           <li><a href="#">Stickers</a></li>
-                            <li><a href="#">Llaveros</a></li> 
+
+                            <li>
+                                <a href="#" class="sidebar-star-icon-and-txt">
+                                    <img src="static\img\layout\star_icon_sidebar.png">
+                                    <span>Stickers</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="sidebar-star-icon-and-txt">
+                                    <img src="static\img\layout\star_icon_sidebar.png">
+                                    <span>Llaveros</span>
+                                </a>
+                            </li> 
+
+                            <li>
+                                <a href="#" class="sidebar-star-icon-and-txt">
+                                    <img src="static\img\layout\star_icon_sidebar.png">
+                                    <span>Pins</span>
+                                </a>
+                            </li>
+
                         </div>
                         
                     </ul>
-                </li>
 
+                </li>
+                
                 <li>
-                    <a href="/">
+                    <a href="/comisiones" class="sidebar-star-icon-and-txt">
+                        <img src="static\img\layout\star_icon_sidebar.png">
                         <span>Comisiones</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="/">
-                        <span>Quienes somos</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/">
-                        <span>Contactanos</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/logout">
+                    <a href="/logout" class="sidebar-star-icon-and-txt">
+                        <img src="static\img\layout\star_icon_sidebar.png">
                         <span>Log out</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="/contactanos" class="contact-us">
+                        <img src="static\img\layout\contactanos_logo.png">
+                        <span>Contáctanos</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/quienes-somos" class="quienes-somos">
+                        <img src="static\img\layout\quienes_somos.png">
+                        <span>¿Quiénes somos?</span>
+                    </a>
+                </li>
+
             </ul>
         </aside>
 

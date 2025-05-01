@@ -59,6 +59,7 @@
 main{
     grid-area: main;
     overflow: hidden;
+    background-color: #f6f3ed;
 }
 
 .text_center {
@@ -94,14 +95,33 @@ body {
     grid-area: navbar;
     grid-column: navbar;
     padding: 1rem;
-    background-color: lightblue;
-    max-height: 52px;
+    background-color: #faecec;
+    min-height: 15vh;
+    max-height: 20vh;
     display: flex;
     width: 100%;
+    border-bottom: 4px solid black;
 }
 
 .togleSidebar-btn{
+    display: flex;
     flex: 1;
+    max-width: 33%;
+    
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        img{
+            max-width: 100px;
+            width: 15vw;
+            height: auto;
+            display: flex;
+            align-items: left;
+        }
+    }
+
 }
 
 .horizontal_menu_logo{
@@ -109,27 +129,56 @@ body {
     align-items: center;
     justify-content: center;
     flex: 1;
+
+    img{
+        width: 40vw;
+        height: auto;
+        object-fit: fill;
+        max-width: 300px;
+    }
 }
 
-.horizontal_menu_search{
+.horizontal_menu_right_links{
     display: flex;
     justify-content: right;
     flex: 1;
+    gap:  10%;
+    max-width: 33%;
+}
+
+.horizontal_menu_search, .horizontal_menu_shipping_car {
+    display: flex;
+    align-items: center;     /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-width: 90px;
+            height: auto;
+            width: 10vw;
+        }
+    }
 }
 
 /* Sidebar Menu */
 #sidebar{
-    height: calc(100vh - 52px); /* 100% of the viewport height minus the height of the navbar */
+    height: calc(100vh - 15vh); /* 100% of the viewport height minus the height of the navbar */
     width: auto;
-    top: 52px;
+    max-width: 30vh;
+    top: 15vh;
     position: fixed;
     transform: translateX(-100%);
     align-self: start;
     grid-area: sidebar;
-    background-color: grey;
+    background-color: #f6f3ed;
     visibility: hidden;
     display: block;
     transition: transform 0.25s ease-in-out;
+    border-right: 20px solid #a4cb62;
 }
 
 #sidebar.show {
@@ -160,10 +209,17 @@ body {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    display: flex;
+    gap: 3%;
+    
+    img{
+        width: 1.5rem;
+        height: auto;
+    }
 }
 
 #sidebar a:hover, #sidebar .dropdown-btn:hover{
-    background-color: rgb(168, 168, 248);
+    background-color: #e9e5dd;
 }
 
 #sidebar .sub-menu{
@@ -178,4 +234,49 @@ body {
 }
 #sidebar .sub-menu.show{
     grid-template-rows: 1fr;
+}
+
+.sidebar-star-icon-and-txt{
+    display: flex;
+    gap: 3%;
+
+    img{
+        width: 1.5rem;
+        height: auto;
+    }
+}
+
+.contact-us{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    img {
+        width: 10rem;
+        height: auto;
+    }
+}
+
+.quienes-somos{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    img {
+        width: 6rem;
+        height: auto;
+    }
+}
+
+/* Comisiones.html Body  */
+.comisiones_body{
+    margin: 5vh 15vh 0vh 4vh; /* top, right, bottom, left */
+
+    h1{
+        font-weight: 700;
+    }
+    
+    p{
+        font-size: 1.5rem;
+    };
 }
