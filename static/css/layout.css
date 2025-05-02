@@ -18,6 +18,7 @@ main{
     grid-area: main;
     overflow: hidden;
     background-color: #f6f3ed;
+    padding-top: 18vh;
 }
 
 .text_center {
