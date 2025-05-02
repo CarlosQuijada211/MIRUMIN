@@ -106,8 +106,45 @@ def logout():
     return redirect("/login")
 
 @app.route("/comisiones", methods=["GET", "POST"])
+#@login_required
 def comisiones():
     return render_template("comisiones.html")
+
+@app.route("/contactanos", methods=["GET", "POST"])
+#@login_required
+def contactanos():
+    return render_template("contactanos.html")
+
+@app.route("/quienes-somos", methods=["GET", "POST"])
+#@login_required
+def quienes_somos():
+    return render_template("quienes_somos.html")
+
+@app.route("/search", methods=["GET", "POST"])
+#@login_required
+def search():
+    return render_template("search.html")
+
+@app.route("/shopping_cart", methods=["GET", "POST"])
+#@login_required
+def shopping_cart():
+    return render_template("shopping_cart.html")
+
+@app.route("/stickers", methods=["GET", "POST"])
+#@login_required
+def stickers():
+    return render_template("stickers.html")
+
+@app.route("/llaveros", methods=["GET", "POST"])
+#@login_required
+def llaveros():
+    return render_template("llaveros.html")
+
+@app.route("/pins", methods=["GET", "POST"])
+#@login_required
+def pines():
+    return render_template("pins.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
