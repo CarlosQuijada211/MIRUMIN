@@ -1,10 +1,26 @@
 
+@font-face {
+    font-family: 'MoreSugar';
+    src: url('/static/font/MoreSugar.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Marytake';
+    src: url('/static/font/Marykate.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Homepage body */
 .homepage_body {
     background-color: #f6f3ed;
     padding-left: 5%;
     padding-right: 5%;
     overflow-x: hidden;
+    padding-top: 3%;
+    padding-top: 21vh;
 }
 
 .item_set {
@@ -14,6 +30,7 @@
     white-space: nowrap;
     padding: 1rem;
     gap: 50px;
+    margin-bottom: 15px;
 }
 
 
@@ -25,7 +42,9 @@
 
 .item_title {
     margin-left: 10px;
-    padding-top: 5px;;
+    padding-top: 5px;
+    font-family: 'Marytake', sans-serif;
+    font-size: 25px;
 }
 
 .item_price {
@@ -33,6 +52,10 @@
     margin-right: 15px;
     font-size: larger;
     font-style: italic;
+    font-family: 'Marytake', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    
 }
 
 .item_image {
@@ -45,13 +68,29 @@
 }
 
 .item_category {
-    background-color: palegoldenrod;
     width: 228x;
     height: 30px;
     margin-left: auto;
     margin-right: auto;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    font-family: 'Marytake', sans-serif;
+}
+
+.item_category_text {
+    font-size: 20px;
+}
+
+.Sticker {
+    background-color: #a4cb62;
+}
+
+.Pin {
+    background-color: #ffa1e5;
+}
+
+.Llavero {
+    background-color: #da9be6;
 }
 
 /* General */
@@ -71,8 +110,8 @@ main{
     margin-right: auto;
 }
 
-h3 {
-    font-size: 17px;
+h2 {
+    font-family: 'MoreSugar', sans-serif;
 }
 
 /* Navigation Menus */
@@ -89,20 +128,17 @@ body {
 }
 
 /* Horizontal Menu */
-#horizontal_menu{
+#horizontal_menu {
     top: 0;
-    position: sticky;
-    grid-area: navbar;
-    grid-column: navbar;
+    position: fixed;
+    height: 20vh; /* Instead of min/max */
+    width: 100%;
+    z-index: 1000;
     padding: 1rem;
     background-color: #faecec;
-    min-height: 15vh;
-    max-height: 20vh;
     display: flex;
-    width: 100%;
     border-bottom: 4px solid black;
 }
-
 .togleSidebar-btn{
     display: flex;
     flex: 1;

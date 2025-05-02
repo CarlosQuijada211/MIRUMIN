@@ -5,6 +5,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required
 
 app = Flask(__name__)
+app.secret_key = ''
 
 def get_db():
     conn = sqlite3.connect("mirumin.db", check_same_thread=False)
@@ -17,11 +18,11 @@ def store():
 
     db = get_db()
 
-    item1 = db.execute("SELECT * FROM items;")
-    item2 = db.execute("SELECT * FROM items;")
-    item3 = db.execute("SELECT * FROM items;")
+    Stickers = db.execute("SELECT * FROM items WHERE categoria = ?;", ("Sticker",))
+    Llaveros = db.execute("SELECT * FROM items WHERE categoria = ?;", ("Llavero",))
+    Pines = db.execute("SELECT * FROM items WHERE categoria = ?;", ("Pin",))
 
-    return render_template("index.html", items1=item1, items2=item2, items3=item3)
+    return render_template("index.html", stickers=Stickers, llaveros=Llaveros, pines=Pines)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -102,7 +103,7 @@ def logout():
     # Forget any user_id
     session.clear()
 
-    return redirect("/")
+    return redirect("/login")
 
 @app.route("/comisiones", methods=["GET", "POST"])
 def comisiones():

@@ -6,44 +6,67 @@
 
 {% block main %}
 <div class="homepage_body">
-    <h1 class="text_center">STORE</h1>
     
-    <h2>Popular</h2>
+    <h2>Stickers</h2>
     <div class="item_set">
-        {% for item in items1 %}
+        {% for item in stickers %}
         <div class="item_background center">
             <h3 class="item_title">{{item.titulo}}</h3>
-            <img class="item_image" src="/static/img/productos/{{item.nombre_img}}">
-            <h2 class="item_price">${{item.precio}}</h2>
-            <div class="item_category">
+            {% if item.categoria == "Sticker" %}
+                <img class="item_image" src="/static/img/productos/Stickers/{{item.nombre_img}}">
+                <h2 class="item_price">$0.50</h2>
+            {% elif item.categoria == "Llavero" %}
+                <img class="item_image" src="/static/img/productos/Llaveros/{{item.nombre_img}}">
+                <h2 class="item_price">$2.00</h2>
+            {% elif item.categoria == "Pin" %}
+                <img class="item_image" src="/static/img/productos/Pines/{{item.nombre_img}}">
+                <h2 class="item_price">$1.50</h2>
+            {% endif %}
+            <div class="item_category {{item.categoria}}">
+                <h3 class="item_category_text text_center">{{item.categoria}}</h3>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Llaveros</h2>
+    <div class="item_set">
+        {% for item in llaveros %}
+        <div class="item_background center">
+            <h3 class="item_title">{{item.titulo}}</h3>
+            {% if item.categoria == "Sticker" %}
+                <img class="item_image" src="/static/img/productos/Stickers/{{item.nombre_img}}">
+                <h2 class="item_price">$0.50</h2>
+            {% elif item.categoria == "Llavero" %}
+                <img class="item_image" src="/static/img/productos/Llaveros/{{item.nombre_img}}">
+                <h2 class="item_price">$2.00</h2>
+            {% elif item.categoria == "Pin" %}
+                <img class="item_image" src="/static/img/productos/Pines/{{item.nombre_img}}">
+                <h2 class="item_price">$1.50</h2>
+            {% endif %}
+            <div class="item_category {{item.categoria}}">
                 <h3 class="text_center">{{item.categoria}}</h3>
             </div>
         </div>
         {% endfor %}
     </div>
 
-    <h2>Nuevo</h2>
+    <h2>Pines</h2>
     <div class="item_set">
-        {% for item in items2 %}
+        {% for item in pines %}
         <div class="item_background center">
             <h3 class="item_title">{{item.titulo}}</h3>
-            <img class="item_image" src="/static/img/productos/{{item.nombre_img}}">
-            <h2 class="item_price">${{item.precio}}</h2>
-            <div class="item_category">
-                <h3 class="text_center">{{item.categoria}}</h3>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
-    <h2>Recomendado</h2>
-    <div class="item_set">
-        {% for item in items3 %}
-        <div class="item_background center">
-            <h3 class="item_title">{{item.titulo}}</h3>
-            <img class="item_image" src="/static/img/productos/{{item.nombre_img}}">
-            <h2 class="item_price">${{item.precio}}</h2>
-            <div class="item_category">
+            {% if item.categoria == "Sticker" %}
+                <img class="item_image" src="/static/img/productos/Stickers/{{item.nombre_img}}">
+                <h2 class="item_price">$0.50</h2>
+            {% elif item.categoria == "Llavero" %}
+                <img class="item_image" src="/static/img/productos/Llaveros/{{item.nombre_img}}">
+                <h2 class="item_price">$2.00</h2>
+            {% elif item.categoria == "Pin" %}
+                <img class="item_image" src="/static/img/productos/Pines/{{item.nombre_img}}">
+                <h2 class="item_price">$1.50</h2>
+            {% endif %}
+            <div class="item_category {{item.categoria}}">
                 <h3 class="text_center">{{item.categoria}}</h3>
             </div>
         </div>
