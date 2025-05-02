@@ -1,0 +1,476 @@
+@font-face {
+    font-family: 'MoreSugar';
+    src: url('/static/font/MoreSugar.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Marytake';
+    src: url('/static/font/Marykate.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General */
+
+main{
+    grid-area: main;
+    overflow: hidden;
+    background-color: #f6f3ed;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Navigation Menus */
+body {
+    min-height: 100vh;
+    display: grid;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: auto 1fr; 
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "navbar navbar"
+    "sidebar main";
+}
+
+/* Horizontal Menu */
+#horizontal_menu {
+    top: 0;
+    position: fixed;
+    height: 20vh; /* Instead of min/max */
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem;
+    background-color: #faecec;
+    border-bottom: 4px solid black;
+    display: flex;
+    align-items: center; /* Vertically center everything */
+    justify-content: space-between; /* Optional, may help in edge cases */
+}
+.togleSidebar-btn{
+    display: flex;
+    justify-content: left;
+    
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        img{
+            display: flex;
+            align-items: left;
+        }
+    }
+
+}
+
+.horizontal_menu_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img{
+        height: auto;
+        object-fit: fill;
+    }
+}
+
+.horizontal_menu_right_links{
+    display: flex;
+    justify-content: right;
+    gap:  10%;
+}
+
+.horizontal_menu_search, .horizontal_menu_shipping_car {
+    display: flex;
+    align-items: center;     /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .togleSidebar-btn{
+        display: flex;
+    
+            img{
+                width: 100px;
+                height: auto;
+            }
+    }
+
+    .horizontal_menu_logo{
+        img{
+            height: auto;
+            width: 300px;
+        }
+    }
+
+    .horizontal_menu_search, .horizontal_menu_shipping_car {        
+        a {
+            img {
+                width: 90px;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .togleSidebar-btn{
+        display: flex;
+    
+            img{
+                width: 75px;
+                height: auto;
+            }
+    }
+
+    .horizontal_menu_logo{
+        img{
+            height: auto;
+            width: 250px;
+        }
+    }
+
+    .horizontal_menu_search, .horizontal_menu_shipping_car {        
+        a {
+            img {
+                width: 75px;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (min-width: 365px) and (max-width: 600px) {
+    .togleSidebar-btn{
+        display: flex;
+    
+            img{
+                width: 50px;
+                height: auto;
+            }
+    }
+
+    .horizontal_menu_logo{
+        img{
+            height: auto;
+            width: 200px;
+        }
+    }
+
+    .horizontal_menu_right_links{
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+    }
+
+    .horizontal_menu_search, .horizontal_menu_shipping_car {        
+        a {
+            img {
+                width: 50px;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    #horizontal_menu {
+        height: 15vh;
+
+    }
+
+    .togleSidebar-btn{
+        display: flex;
+    
+            img{
+                width: 50px;
+                height: auto;
+            }
+    }
+
+    .horizontal_menu_logo{
+        img{
+            height: auto;
+            width: 200px;
+        }
+    }
+
+    .horizontal_menu_right_links{
+        visibility: hidden;
+    }
+
+    .horizontal_menu_search, .horizontal_menu_shipping_car {        
+        a {
+            img {
+                width: 50px;
+                height: auto;
+            }
+        }
+    }
+}
+
+
+
+/* Side bar */
+/* Sidebar Menu */
+#sidebar{
+    height: calc(100vh - 15vh); /* 100% of the viewport height minus the height of the navbar */
+    width: auto;
+    top: 15vh;
+    position: fixed;
+    transform: translateX(-100%);
+    align-self: start;
+    grid-area: sidebar;
+    background-color: #f6f3ed;
+    visibility: hidden;
+    display: block;
+    transition: transform 0.25s ease-in-out;
+    border-right: 20px solid #a4cb62;
+    padding-top: 5vh;
+}
+
+#sidebar.show {
+    transform: translateX(0);
+    visibility: visible;
+    position: sticky;
+    transition: transform 0.25s ease-in-out;
+}
+
+#sidebar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar a, #sidebar .dropdown-btn{
+    border-radius: .5em;
+    padding: .85em;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-btn{
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    gap: 3%;
+}
+
+#sidebar a:hover, #sidebar .dropdown-btn:hover{
+    background-color: #e9e5dd;
+}
+
+#sidebar .sub-menu{
+    display: grid;
+    padding-left: 1rem;
+    grid-template-rows: 0fr;
+    transition: 300ms ease-in-out;
+
+    div{
+        overflow: hidden;
+    }
+}
+#sidebar .sub-menu.show{
+    grid-template-rows: 1fr;
+}
+
+.sidebar-star-icon-and-txt{
+    display: flex;
+    gap: 3%;
+}
+
+.contact-us{
+    display: inline-none;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.quienes-somos{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    span {
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 600px) {
+    /* Sidebar Menu */
+    #sidebar{
+        max-width: 30vh;
+    }
+
+    .dropdown-btn{
+        img{
+            width: 1.5rem;
+            height: auto;
+        }
+    }
+
+    .sidebar-star-icon-and-txt{
+        img{
+            width: 1.5rem;
+            height: auto;
+        }
+    }
+
+    .contactanos-small {
+        display: none;
+    }
+
+    .quienes-somos-small {
+        display: none;
+    }
+
+    .contact-us{
+        img {
+            width: 9rem;
+            height: auto;
+        }
+    }
+
+    .quienes-somos{
+        img {
+            width: 5rem;
+            height: auto;
+        }
+    }
+
+    .search-small{
+        display: none;
+    }
+
+    .shopping-small{
+        display: none;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 600px) {
+    /* Sidebar Menu */
+    #sidebar{
+        max-width: 20vh;
+    }
+
+    .sidebar_text {
+        font-size: 12px;
+    }
+
+    .dropdown-btn{        
+        img{
+            width: 1rem;
+            height: auto;
+        }
+    }
+
+    .sidebar-star-icon-and-txt{
+        img{
+            width: 1rem;
+            height: auto;
+        }
+    }
+
+    .contact-us{
+        span {
+            display: none;
+        }
+
+        img {
+            display: none;
+            width: 6rem;
+            height: auto;
+        }
+    }
+
+    .quienes-somos{
+        span {
+            display: none; 
+        }
+
+        img {
+            display: none;
+            width: 5rem;
+            height: auto;
+        }
+    }
+
+    .search-small{
+        display: none;
+    }
+
+    .shopping-small{
+        display: none;
+    }
+}
+
+@media (max-width: 375px) {
+    /* Sidebar Menu */
+    #sidebar{
+        max-width: 20vh;
+    }
+
+    .sidebar_text {
+        font-size: 12px;
+    }
+
+    .dropdown-btn{        
+        img{
+            width: 1rem;
+            height: auto;
+        }
+    }
+
+    .sidebar-star-icon-and-txt{
+        img{
+            width: 1rem;
+            height: auto;
+        }
+    }
+
+    .contact-us{
+        span {
+            display: none;
+        }
+
+        img {
+            display: none;
+            width: 6rem;
+            height: auto;
+        }
+    }
+
+    .quienes-somos{
+        span {
+            display: none; 
+        }
+
+        img {
+            display: none;
+            width: 5rem;
+            height: auto;
+        }
+    }
+}
